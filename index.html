@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            min-height: 100vh;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            /* width: 100%; */
+            text-align: center;
+        }
+        h1{
+            background-color: gray;
+            padding: 10px 30px;
+            color: #fff;
+            border-radius: 10px;
+        }
+        #btn{
+            padding: 10px 30px;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+            background-color: dimgray;
+            margin-top: 20px;
+            font-size: 1.5em;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>background color:  <span class="color"></span></h1>
+        <button id="btn">Click Me</button>
+    </div>
+    <script>
+        const colorArray = ["red","pink","blue","black","yellow"]
+        const btn = document.getElementById("btn")
+        const color = document.querySelector(".color")
+        btn.addEventListener("click" ,function(){
+            const randomNumber = getRandomNumber()
+            document.body.style.backgroundColor = colorArray[randomNumber]
+            color.textContent = colorArray[randomNumber]
+        })
+        function getRandomNumber(){
+            return Math.floor(Math.random()*colorArray.length)
+        }
+    </script>
+</body>
+</html>
